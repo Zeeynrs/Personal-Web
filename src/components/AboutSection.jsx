@@ -85,7 +85,7 @@ const AboutSection = ({ content }) => {
     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
       <div className="about-image flex justify-center items-center order-first md:order-last">
         <div className="avatar-ring mb-8 md:mb-0">
-          <div className="w-56 h-56 md:w-64 md:h-64 rounded-full bg-tertiary shadow-card overflow-hidden border-4">
+          <div className="w-56 h-56 md:w-64 md:h-64 rounded-full bg-card shadow-card overflow-hidden border-4">
             <img src={about.image} alt={`Foto ${site.fullName}`} className="w-full h-full object-cover" />
           </div>
         </div>
@@ -93,17 +93,17 @@ const AboutSection = ({ content }) => {
 
       <div className="about-card order-last md:order-first mt-4 md:mt-0">
         <span className="section-eyebrow">01 · Tentang</span>
-        <h2 className="text-3xl sm:text-4xl font-bold text-white-100 mb-6 md:mb-8 text-center md:text-left">
+        <h2 className="text-3xl sm:text-4xl font-bold text-ink mb-6 md:mb-8 text-center md:text-left">
           <span className="animated-underline active">Tentang Saya</span>
         </h2>
-        <ScrollRevealText text={about.description} className="text-secondary text-lg mb-6 leading-relaxed" />
+        <ScrollRevealText text={about.description} className="text-muted text-lg mb-6 leading-relaxed" />
 
         {cvs.length > 0 && (
           <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 mt-2">
             <button
               type="button"
               onClick={() => window.openCVModal?.()}
-              className="bg-tertiary hover:bg-indigo-600 text-white py-3 px-6 rounded-xl text-base font-medium transition-all duration-300 transform hover:scale-105 flex items-center justify-center border border-white/10"
+              className="btn-ink py-3 px-6 rounded-xl text-base font-medium hover:scale-105 flex items-center justify-center"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />

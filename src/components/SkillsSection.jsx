@@ -33,10 +33,10 @@ const SkillsSection = ({ content }) => {
     <div className="max-w-7xl mx-auto">
       <div className="text-center mb-14">
         <span className="section-eyebrow center">02 · Keahlian</span>
-        <h2 className="text-3xl sm:text-4xl font-bold text-white-100 skills-title">
+        <h2 className="text-3xl sm:text-4xl font-bold text-ink skills-title">
           <span className="animated-underline active">Tech Stack</span>
         </h2>
-        <p className="text-secondary mt-4 max-w-xl mx-auto">
+        <p className="text-muted mt-4 max-w-xl mx-auto">
           Bahasa, framework, dan alat yang saya pakai sehari-hari.
         </p>
       </div>

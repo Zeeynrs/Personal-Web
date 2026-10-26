@@ -36,8 +36,8 @@ const linkInfo = (link) => {
 
 // description berasal dari database: escape semuanya, lalu izinkan hanya <b>, <i>, <br/> tanpa atribut
 const ESCAPES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
-const safeHtml = (text) => String(text)
-  .replace(/[&<>"']/g, (c) => ESCAPES[c])
+const escapeHtml = (text) => String(text).replace(/[&<>"']/g, (c) => ESCAPES[c]);
+const safeHtml = (text) => escapeHtml(text)
   .replace(/&lt;(\/?)(b|i)&gt;/gi, '<$1$2>')
   .replace(/&lt;br\s*\/?&gt;/gi, '<br/>');
 
@@ -121,11 +121,11 @@ const PortfolioSection = ({ content }) => {
       <div className="mb-24">
         <div className="mb-2">
           <span className="section-eyebrow">03 · Pencapaian</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-ink">
             <span className="animated-underline active">Sertifikat</span>
           </h2>
         </div>
-        <p style={{ color: '#aaa6c3', marginBottom: '2rem', fontSize: '0.95rem' }}>
+        <p className="text-muted" style={{ marginBottom: '2rem', fontSize: '0.95rem' }}>
           Klik kartu untuk melihat detail sertifikat.
         </p>
 
@@ -135,11 +135,11 @@ const PortfolioSection = ({ content }) => {
               key={cert.id ?? cert.title}
               href={cert.image}
               data-fancybox="gallery-certs"
-              data-caption={cert.title}
+              data-caption={escapeHtml(cert.title)}
               className="certificate-card"
             >
               <img src={cert.image} alt={cert.title} loading="lazy" />
-              <h3 style={{ color: '#e2e8f0', fontWeight: 600, fontSize: '0.95rem', textAlign: 'center', position: 'relative', zIndex: 1 }}>
+              <h3 style={{ color: 'var(--ink)', fontWeight: 600, fontSize: '0.95rem', textAlign: 'center', position: 'relative', zIndex: 1 }}>
                 {cert.title}
               </h3>
             </a>
@@ -159,11 +159,11 @@ const PortfolioSection = ({ content }) => {
       <div style={{ paddingBottom: '4rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '0.75rem' }}>
           <span className="section-eyebrow center">04 · Karya</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white gallery-title">
+          <h2 className="text-3xl md:text-4xl font-bold text-ink gallery-title">
             <span className="animated-underline active">Proyek</span>
           </h2>
         </div>
-        <p style={{ color: '#aaa6c3', textAlign: 'center', marginBottom: '0', fontSize: '0.95rem' }}>
+        <p className="text-muted" style={{ textAlign: 'center', marginBottom: '0', fontSize: '0.95rem' }}>
           Klik gambar untuk memperbesar · geser atau pakai panah untuk melihat proyek lain
         </p>
 
@@ -183,7 +183,7 @@ const PortfolioSection = ({ content }) => {
                     <a
                       href={project.image}
                       data-fancybox="gallery-projects"
-                      data-caption={`<b>${project.title}</b>${project.description ? `<br/>${project.description}` : ''}`}
+                      data-caption={`<b>${escapeHtml(project.title)}</b>${project.description ? `<br/>${safeHtml(project.description)}` : ''}`}
                       className="pcard-media"
                       aria-label={`Lihat gambar ${project.title}`}
                     >

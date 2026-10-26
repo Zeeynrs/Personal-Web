@@ -95,11 +95,12 @@ const initBackgroundScene = () => {
   const particlesCount = window.innerWidth < 768 ? 1000 : 2000;
   const posArray = new Float32Array(particlesCount * 3);
   const colorsArray = new Float32Array(particlesCount * 3);
+  // Putih → abu: monokrom di atas latar gelap
   const colorPalette = [
-    new THREE.Color(0xaaa6c3),
-    new THREE.Color(0x8a86a3),
-    new THREE.Color(0x7a76b3),
-    new THREE.Color(0x4c6ef5),
+    new THREE.Color(0xf5f5f5),
+    new THREE.Color(0xc4c4c4),
+    new THREE.Color(0x8a8a8a),
+    new THREE.Color(0x5c5c5c),
   ];
 
   for (let i = 0; i < particlesCount; i++) {
@@ -137,7 +138,7 @@ const initBackgroundScene = () => {
         color: colorPalette[Math.floor(rand() * colorPalette.length)].getHex(),
         wireframe: rand() > 0.5,
         transparent: true,
-        opacity: 0.7,
+        opacity: 0.35,
         metalness: 0.3,
         roughness: 0.8,
       })
@@ -158,7 +159,7 @@ const initBackgroundScene = () => {
   const pointLight = new THREE.PointLight(0xffffff, 0.8);
   pointLight.position.set(2, 3, 4);
   scene.add(pointLight);
-  const directionalLight = new THREE.DirectionalLight(0x4c6ef5, 0.5);
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
   directionalLight.position.set(-5, 2, 2);
   scene.add(directionalLight);
   camera.position.z = 4;
@@ -498,14 +499,14 @@ const initCVModal = (cvs) => {
   const list = document.getElementById('cv-modal-list');
   if (!modal || !content || !closeBtn || !list) return;
 
-  const COLORS = ['bg-indigo-600 hover:bg-indigo-700', 'bg-blue-600 hover:bg-blue-700'];
+  const COLORS = ['btn-ink', 'bg-white/5 hover:bg-white/10 text-ink border border-white/10'];
   const ICON = 'M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z';
   cvs.forEach((cv, i) => {
     const a = document.createElement('a');
     a.href = cv.url;
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
-    a.className = `${COLORS[i % COLORS.length]} text-white py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex flex-col items-center justify-center text-center`;
+    a.className = `${COLORS[i % COLORS.length]} py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex flex-col items-center justify-center text-center`;
     a.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${ICON}" /></svg>`;
     const label = document.createElement('span');
     label.className = 'font-medium';

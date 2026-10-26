@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="hsl(304 60% 18%)"/><stop offset="1" stop-color="hsl(344 55% 10%)"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g)"/>
+  <g fill="none" stroke="hsl(304 80% 75%)" stroke-opacity=".18">
+    <circle cx="680" cy="80" r="160"/><circle cx="680" cy="80" r="110"/><circle cx="120" cy="460" r="140"/>
+  </g>
+  
+  <rect x="40" y="40" width="720" height="420" rx="18" fill="none" stroke="hsl(304 80% 75%)" stroke-opacity=".4" stroke-width="3"/>
+  <circle cx="400" cy="190" r="70" fill="hsl(304 80% 65%)" fill-opacity=".9"/>
+  <path d="M370 250l-20 70 50-25 50 25-20-70" fill="hsl(304 80% 65%)" fill-opacity=".9"/>
+  <path d="M370 190l20 20 40-40" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="60" y="380" font-family="Poppins, Arial, sans-serif" font-size="44" font-weight="700" fill="#fff">UI/UX Design</text>
+  <text x="60" y="425" font-family="Poppins, Arial, sans-serif" font-size="22" fill="hsl(304 70% 80%)">Ganti dengan gambar sertifikat kamu</text>
+</svg>

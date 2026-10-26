@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="hsl(60 60% 18%)"/><stop offset="1" stop-color="hsl(100 55% 10%)"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g)"/>
+  <g fill="none" stroke="hsl(60 80% 75%)" stroke-opacity=".18">
+    <circle cx="680" cy="80" r="160"/><circle cx="680" cy="80" r="110"/><circle cx="120" cy="460" r="140"/>
+  </g>
+  
+  <rect x="60" y="60" width="420" height="250" rx="14" fill="#0b0c1d" stroke="hsl(60 80% 75%)" stroke-opacity=".5"/>
+  <circle cx="85" cy="82" r="6" fill="#f87171"/><circle cx="105" cy="82" r="6" fill="#fbbf24"/><circle cx="125" cy="82" r="6" fill="#34d399"/>
+  <rect x="85" y="115" width="200" height="16" rx="8" fill="hsl(60 80% 70%)"/>
+  <rect x="85" y="145" width="300" height="10" rx="5" fill="#fff" fill-opacity=".25"/>
+  <rect x="85" y="165" width="260" height="10" rx="5" fill="#fff" fill-opacity=".25"/>
+  <rect x="85" y="200" width="120" height="80" rx="10" fill="hsl(60 80% 70%)" fill-opacity=".35"/>
+  <rect x="220" y="200" width="120" height="80" rx="10" fill="hsl(60 80% 70%)" fill-opacity=".25"/>
+  <text x="60" y="380" font-family="Poppins, Arial, sans-serif" font-size="44" font-weight="700" fill="#fff">Aplikasi Catatan</text>
+  <text x="60" y="425" font-family="Poppins, Arial, sans-serif" font-size="22" fill="hsl(60 70% 80%)">Ganti dengan screenshot proyek kamu</text>
+</svg>

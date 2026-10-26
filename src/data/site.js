@@ -8,9 +8,9 @@ const DEVICON = 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons';
 
 export const site = {
   // Nama singkat: muncul di logo navbar, intro "Welcome to", dan judul hero
-  brand: 'Zeeynrs',
+  brand: 'Tamsy',
   // Judul hero; kata pertama sebaiknya sama dengan `brand` agar animasi intro "terbang" pas
-  heroTitle: 'Zeeynrs Site',
+  heroTitle: 'Tamsy Site',
   fullName: 'Nama Lengkap Kamu',
   badge: 'Tech Enthusiast',
   roles: ['Web Developer', '3D Enthusiast', 'UI Designer', 'Gamer', 'Mobile Developer'],

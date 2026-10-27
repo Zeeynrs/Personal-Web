@@ -371,30 +371,50 @@ body footer .social-link:hover {
   .reveal { opacity: 1; transform: none; filter: none; transition: none; }
 }
 
-/* ---------- Tata surya: UI di dalam canvas ---------- */
+/* ---------- Globe jaringan cloud: UI di dalam canvas ---------- */
 #model-container { position: relative; }
-.solar-labels { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
-.solar-label {
+.globe-labels { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.globe-label {
   position: absolute;
   top: 0; left: 0;
-  padding: 2px 9px;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: rgba(229, 229, 229, 0.75);
-  background: rgba(0, 0, 0, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 3px 10px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #c8f7ff;
+  background: rgba(3, 8, 18, 0.72);
+  border: 1px solid rgba(95, 244, 255, 0.3);
   border-radius: 999px;
   white-space: nowrap;
-  transition: color 0.25s, background 0.25s, border-color 0.25s, opacity 0.25s;
-  will-change: transform;
+  transition: color 0.25s, background 0.25s, border-color 0.25s;
+  will-change: transform, opacity;
 }
-.solar-label.active {
-  color: #0a0a0a;
-  background: #fff;
+.globe-label.active {
+  color: #031016;
+  background: #aafcff;
   border-color: transparent;
 }
-.solar-toolbar {
+.globe-pill {
+  position: absolute;
+  top: 0; left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 5px 12px 6px;
+  background: rgba(8, 8, 8, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+  will-change: transform, opacity;
+}
+.globe-pill strong { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; color: #fff; }
+.globe-pill span { font-size: 0.62rem; color: #94a3b8; }
+.globe-toolbar {
   position: absolute;
   left: 14px; bottom: 14px;
   display: flex;
@@ -402,7 +422,7 @@ body footer .social-link:hover {
   gap: 6px;
   z-index: 5;
 }
-.solar-toolbar button {
+.globe-toolbar button {
   padding: 6px 14px;
   font-size: 0.75rem;
   font-weight: 500;
@@ -415,12 +435,14 @@ body footer .social-link:hover {
   -webkit-backdrop-filter: blur(8px);
   transition: color 0.2s, background 0.2s, border-color 0.2s;
 }
-.solar-toolbar button:hover { color: #fff; border-color: rgba(255, 255, 255, 0.4); }
-.solar-toolbar button.on { color: #0a0a0a; background: #fff; border-color: #fff; }
-.solar-panel {
+.globe-toolbar button:hover { color: #fff; border-color: rgba(255, 255, 255, 0.4); }
+.globe-toolbar button.on { color: #0a0a0a; background: #fff; border-color: #fff; }
+.globe-panel {
   position: absolute;
   top: 14px; right: 14px;
   width: min(300px, calc(100% - 28px));
+  max-height: calc(100% - 28px);
+  overflow-y: auto;
   padding: 1rem 1.1rem 1.1rem;
   background: rgba(8, 8, 8, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -435,9 +457,18 @@ body footer .social-link:hover {
   pointer-events: none;
   transition: opacity 0.3s, transform 0.3s;
 }
-.solar-panel.open { opacity: 1; transform: none; pointer-events: auto; }
-.solar-panel-title { margin: 0 0 0.6rem; font-size: 1.1rem; font-weight: 700; color: #fff; }
-.solar-panel-close {
+.globe-panel.open { opacity: 1; transform: none; pointer-events: auto; }
+.globe-panel-kicker {
+  margin: 0 0 0.3rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7fe9f5;
+}
+.globe-panel-title { margin: 0 1.2rem 0.45rem 0; font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; color: #fff; }
+.globe-panel-desc { margin: 0 0 0.85rem; font-size: 0.8rem; line-height: 1.5; color: #d4d4d4; }
+.globe-panel-close {
   position: absolute;
   top: 8px; right: 12px;
   font-size: 1.3rem;
@@ -447,14 +478,31 @@ body footer .social-link:hover {
   border: 0;
   cursor: pointer;
 }
-.solar-panel-close:hover { color: #fff; }
-.solar-panel dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 0.35rem 0.9rem; font-size: 0.8rem; }
-.solar-panel dt { color: #a3a3a3; }
-.solar-panel dd { margin: 0; color: #e5e5e5; text-align: right; font-weight: 500; }
+.globe-panel-close:hover { color: #fff; }
+.globe-panel dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 0.35rem 0.9rem; font-size: 0.78rem; }
+.globe-panel dt { color: #a3a3a3; }
+.globe-panel dd { margin: 0; color: #e5e5e5; text-align: right; font-weight: 500; }
+.globe-panel-note { margin: 0.8rem 0 0; font-size: 0.66rem; color: #737373; }
+.globe-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #a3a3a3;
+  text-align: center;
+}
 @media (max-width: 640px) {
-  .solar-label { font-size: 0.62rem; padding: 1px 7px; }
-  .solar-toolbar button { padding: 5px 11px; font-size: 0.7rem; }
-  .solar-panel { top: auto; bottom: 54px; right: 10px; }
+  .globe-label { font-size: 0.56rem; padding: 2px 8px; }
+  .globe-toolbar button { padding: 5px 11px; font-size: 0.7rem; }
+  .globe-panel { top: auto; bottom: 54px; right: 10px; max-height: calc(100% - 68px); padding: 0.7rem 0.85rem 0.75rem; border-radius: 14px; }
+  .globe-panel-kicker { font-size: 0.58rem; margin-bottom: 0.2rem; }
+  .globe-panel-title { font-size: 0.88rem; margin-bottom: 0.3rem; }
+  .globe-panel-desc { font-size: 0.72rem; line-height: 1.4; margin-bottom: 0.5rem; }
+  .globe-panel dl { font-size: 0.68rem; gap: 0.2rem 0.75rem; }
+  .globe-panel-note { font-size: 0.6rem; margin-top: 0.45rem; }
 }
 #model-container .interaction-helper {
   top: 14px;

@@ -4,8 +4,10 @@ Desain dan sebagian kode situs ini diadaptasi dari proyek **fe_porto**
 (https://github.com/ICR-1/fe_porto), dirilis di bawah lisensi MIT.
 Berkas yang disalin atau diadaptasi dari proyek tersebut:
 
-- `src/solarSystem.js`, `src/earthTexture.js`, `src/earthData.js`, `src/effects.js`,
-  `src/utils/seededRandom.js`, `src/modern.css` (disalin; `effects.js` sedikit diubah)
+- `src/earthData.js`, `src/effects.js`, `src/utils/seededRandom.js`, `src/modern.css`
+  (disalin; `effects.js` sedikit diubah)
+- `src/globe/land.js` (rasterisasi garis pantai diadaptasi dari `earthTexture.js` proyek tersebut) dan
+  `src/globe/techGlobe.js` (pola renderer, kontrol kamera, dan label diadaptasi dari `solarSystem.js`)
 - `index.html`, `src/main.jsx`, `src/style.css`, `src/components/*.jsx`, `src/admin/*.jsx`,
   `supabase/migrations/0001_schema.sql` (diadaptasi)
 

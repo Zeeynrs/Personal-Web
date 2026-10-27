@@ -1,7 +1,7 @@
 import './style.css';
 import './modern.css';
 import { initEffects } from './effects';
-import { initSolarSystem } from './solarSystem';
+import { initTechGlobe } from './globe/techGlobe';
 import * as THREE from 'three';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -683,8 +683,9 @@ window.addEventListener('DOMContentLoaded', () => {
   ]));
 
   applySiteContent();
-  initBackgroundScene();
-  initSolarSystem(document.getElementById('model-container'));
+  try { initBackgroundScene(); } catch (err) { console.error('Latar WebGL gagal dimuat:', err); }
+  // Globe 3D tidak boleh menghentikan inisialisasi bagian halaman lainnya bila gagal
+  try { initTechGlobe(document.getElementById('model-container')); } catch (err) { console.error('Globe 3D gagal dimuat:', err); }
   initScrollAnimations();
   initPreloader(contentReady);
   initNavbar();

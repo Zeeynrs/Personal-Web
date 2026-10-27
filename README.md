@@ -5,7 +5,7 @@ Website portofolio 3D interaktif: Vite + React + Three.js + GSAP + Tailwind, den
 
 Fitur: intro animasi ("Hello World" → "Welcome to" → nama terbang ke judul), latar bintang WebGL,
 navbar pil yang bersembunyi saat scroll, teks peran yang berganti, About dengan teks muncul per kata
-dan statistik, marquee Tech Stack, model tata surya 3D interaktif (klik planet untuk detail) dengan jam WIB,
+dan statistik, marquee Tech Stack, globe hologram jaringan cloud 3D interaktif (benua dari data geografi nyata, klik titik untuk detail) dengan jam WIB,
 grid sertifikat + lightbox, carousel proyek, formulir kontak, footer, dan panel admin di `/admin`.
 
 ## Menjalankan

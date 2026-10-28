@@ -111,7 +111,7 @@ export const site = {
       github: 'https://github.com/Zeeynrs',
       linkedin: 'https://www.linkedin.com/in/daffa-aditya-pratama-jati-018515360/',
       youtube: '',
-      discord: 'Meess#9117',
+      discord: 'https://discord.com/users/858855851586486293',
     },
   },
 

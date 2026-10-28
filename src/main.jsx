@@ -77,7 +77,7 @@ const applySiteContent = () => {
     s.github && ['GitHub', s.github, 'github'],
     s.linkedin && ['LinkedIn', s.linkedin, 'linkedin'],
     s.youtube && ['YouTube', s.youtube, 'youtube'],
-    s.discord && ['Discord', s.discord, 'discord'],
+    s.discord && ['Discord', /^\d+$/.test(s.discord) ? `https://discord.com/users/${s.discord}` : s.discord, 'discord'],
   ].filter(Boolean);
 
   const ccIcons = document.getElementById('cc-icons');

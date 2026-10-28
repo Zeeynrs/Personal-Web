@@ -13,15 +13,15 @@ export const site = {
   heroTitle: 'Tamsy Site',
   fullName: 'Daffa Aditya Pratama Jati',
   badge: 'Tech Enthusiast',
-  roles: ['Web Developer', '3D Enthusiast', 'UI Designer', 'Gamer', 'Mobile Developer'],
+  roles: ['Web Developer', '3D Enthusiast', 'AI & ML Explorer', 'AR/VR Developer', 'Cybersecurity Enthusiast'],
   logo: '/logo.svg',
 
   about: {
     image: '/images/profile.svg',
     description:
-      'Halo! Saya seorang web developer yang suka membangun pengalaman web interaktif dan modern. ' +
-      'Saya senang bereksperimen dengan grafis 3D di browser, merancang antarmuka yang rapi, ' +
-      'dan terus belajar teknologi baru. Saat ini saya fokus pada React, Three.js, dan animasi web.',
+      'Saya seorang pengembang web yang memadukan rekayasa perangkat lunak modern dengan teknologi mutakhir: grafis 3D interaktif serta augmented & virtual reality (AR/VR). ' +
+      'Berdedikasi untuk menciptakan aplikasi yang tidak hanya berkinerja tinggi dan terstruktur rapi, tetapi juga menghadirkan interaksi visual imersif yang mendalam. ' +
+      'Saat ini, saya sedang memfokuskan eksplorasi pada ranah Artificial Intelligence (GenAI & Machine Learning) serta Cybersecurity untuk membangun solusi digital yang cerdas, adaptif, dan aman dari fondasi.',
   },
 
   // Daftar CV pada tombol "Lihat CV Saya" (url boleh link Google Drive / file di /public)
@@ -116,7 +116,7 @@ export const site = {
   },
 
   footer: {
-    blurb: 'Web developer dengan minat pada pengembangan 3D interaktif, desain antarmuka, dan IoT.',
+    blurb: 'Web developer dengan fokus pada grafis 3D interaktif, AI/ML, teknologi AR/VR, dan cybersecurity.',
     techStack: ['HTML', 'CSS', 'JS', 'Three', 'React', 'Tailwind', 'WebGL'],
   },
 };

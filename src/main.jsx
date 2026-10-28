@@ -30,14 +30,36 @@ const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)')
 // ============ ISI HALAMAN DARI src/data/site.js ============
 const pick = (path) => path.split('.').reduce((o, k) => (o == null ? o : o[k]), site);
 
-const iconLink = (className, label, href, svgInner) => {
+const iconLink = (className, label, href, svgInner, key) => {
   const a = document.createElement('a');
-  a.href = href;
   a.className = className;
   a.setAttribute('aria-label', label);
   a.dataset.label = label;
   a.title = label;
-  if (/^https?:/.test(href)) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+
+  if (key === 'discord' && !/^https?:/.test(href)) {
+    a.href = '#';
+    a.title = `Discord: ${href} (Klik untuk menyalin)`;
+    a.dataset.label = `Discord: ${href}`;
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(href);
+        const originalLabel = a.dataset.label;
+        const originalTitle = a.title;
+        a.dataset.label = 'Tersalin!';
+        a.title = 'Tersalin!';
+        setTimeout(() => {
+          a.dataset.label = originalLabel;
+          a.title = originalTitle;
+        }, 2000);
+      }
+    });
+  } else {
+    a.href = href;
+    if (/^https?:/.test(href)) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+  }
+
   a.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">${svgInner}</svg>`;
   return a;
 };
@@ -55,14 +77,15 @@ const applySiteContent = () => {
     s.github && ['GitHub', s.github, 'github'],
     s.linkedin && ['LinkedIn', s.linkedin, 'linkedin'],
     s.youtube && ['YouTube', s.youtube, 'youtube'],
+    s.discord && ['Discord', s.discord, 'discord'],
   ].filter(Boolean);
 
   const ccIcons = document.getElementById('cc-icons');
-  links.forEach(([label, href, key]) => ccIcons.appendChild(iconLink('cc-icon', label, href, BRAND_ICONS[key])));
+  links.forEach(([label, href, key]) => ccIcons.appendChild(iconLink('cc-icon', label, href, BRAND_ICONS[key], key)));
 
   const footSocials = document.getElementById('foot-socials');
   links.filter(([, , key]) => key !== 'email')
-    .forEach(([label, href, key]) => footSocials.appendChild(iconLink('foot-social', label, href, BRAND_ICONS[key])));
+    .forEach(([label, href, key]) => footSocials.appendChild(iconLink('foot-social', label, href, BRAND_ICONS[key], key)));
 
   const footContacts = document.getElementById('foot-contacts');
   const lineRow = (tag, icon, text, href) => {

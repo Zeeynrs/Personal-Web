@@ -11,7 +11,7 @@ export const site = {
   brand: 'Tamsy',
   // Judul hero; kata pertama sebaiknya sama dengan `brand` agar animasi intro "terbang" pas
   heroTitle: 'Tamsy Site',
-  fullName: 'Nama Lengkap Kamu',
+  fullName: 'Daffa Aditya Pratama Jati',
   badge: 'Tech Enthusiast',
   roles: ['Web Developer', '3D Enthusiast', 'UI Designer', 'Gamer', 'Mobile Developer'],
   logo: '/logo.svg',
@@ -101,16 +101,17 @@ export const site = {
 
   contact: {
     lead: 'Punya proyek, ide kolaborasi, atau sekadar ingin menyapa? Temukan saya di sosial media, atau kirim pesan langsung lewat formulir ini.',
-    email: 'emailkamu@contoh.com',
-    phone: '+62 812 0000 0000',
-    whatsapp: '6281200000000', // format wa.me: kode negara tanpa "+"
+    email: 'adityadaffa522@gmail.com',
+    phone: '+62 858-1427-3138',
+    whatsapp: '6285814273138', // format wa.me: kode negara tanpa "+"
     location: 'Indonesia (WIB, UTC+7)',
     // Kosongkan string untuk menyembunyikan ikon
     socials: {
-      instagram: 'https://www.instagram.com/',
+      instagram: 'https://www.instagram.com/dawa.thoumeaux?mdxt=MTM2MXdraTNtOG1pMg%3D%3D&utm_source=qr',
       github: 'https://github.com/Zeeynrs',
-      linkedin: 'https://www.linkedin.com/',
-      youtube: 'https://www.youtube.com/',
+      linkedin: 'https://www.linkedin.com/in/daffa-aditya-pratama-jati-018515360/',
+      youtube: '',
+      discord: 'Meess#9117',
     },
   },
 
